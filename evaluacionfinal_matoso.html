@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Evaluación Final</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="js/funciones.js"></script>
+    <style>
+      body{
+        background-image: url("img/fondo1.jpg");
+        background-repeat:no-repeat;
+        background-size:cover;
+      }
+    </style>
+    <script>
+    
+    function validarCampos(){
+      var preguntaunob = document.getElementById("preguntauno").value;
+      var preguntadosb = document.getElementById("preguntados").value;
+      var preguntatresb = document.getElementById("preguntatres").value;
+      var preguntacuatrob = document.getElementById("preguntacuatro").value;
+      var nombreb = document.getElementById("nombre").value;
+      var correob= document.getElementById("correo").value;
+    
+      var vValido = true;
+                
+                if (preguntaunob == 0 || preguntaunob == null){
+                  alert('no ingreso información en el campo PREGUNTA 1 ');
+                  vValido = false;
+                }
+                if (preguntadosb == 0 || preguntadosb == null){
+                  alert('no ingreso información en el campo PREGUNTA 2 ');
+                  vValido = false;
+                }
+                if (preguntatresb == 0 || preguntatresb == null){
+                  alert('no ingreso información en el campo PREGUNTA 3 ');
+                  vValido = false;
+                }
+                if (preguntacuatrob == 0 || preguntacuatrob == null){
+                  alert('no ingreso información en el campo PREGUNTA 4 ');
+                  vValido = false;
+                }
+                if (nombreb == ""){
+                  alert('no ingreso información en el campo NOMBRE ');
+                  vValido = false;
+                }
+
+                if (correob == ""){
+                  alert('no ingreso información en el campo CORREO ELECTRÓNICO');
+                  vValido = false;
+                }
+                
+      
+		if(vValido){
+	  
+			evaluar()
+		
+		}
+    }
+    </script>
+</head>
+<body>
+  <br>
+  <h3 class="text-center" style="color: aliceblue">
+    JUEGO DE PREGUNTAS Y RESPUESTAS
+    <small class="text-muted" style="color: rgb(70, 71, 73)">Tema: Ingeniería de Software I</small>
+  </h3>
+  <br>
+  <p style="color: aliceblue" class="lead">
+    Consigna: seleccionar la respuesta que estime correcta para cada pregunta, al finalizar de responder ingrese su nombre y correo electrónico, haga clic en el botón enviar.
+  </p>
+      <form>
+      <div class="container">
+        <div class="row row-cols-2">
+          <div class="col">
+            <img src="img/Diapositiva1.JPG" class="img-fluid" alt="...">
+            <label class="visually-hidden" for="preguntauno">Pregunta 1</label>
+            <select class="form-select" id="preguntauno" name="preguntauno" required>
+              <option selected></option>
+              <option value="1">Esfuerzo, duración y personas</option>
+              <option value="2">Esfuerzo, LOC y duración</option>
+              <option value="3">LOC, esfuerzo y personas</option>
+              <option value="4">Esfuerzo nominal, productividad y tiempo</option>
+            </select>
+          </div>
+          <div class="col">
+            <img src="img/Diapositiva2.JPG" class="img-fluid" alt="...">
+            <label class="visually-hidden" for="preguntados">Pregunta 2</label>
+            <select class="form-select" id="preguntados" required>
+              <option selected></option>
+              <option value="1">La ruta mas corta indica la duración total del proyecto</option>
+              <option value="2">El tiempo que se dispone para terminar la tarea </option>
+              <option value="3">La ruta mas larga indica la duración total del proyecto</option>
+              <option value="4">El tiempo que se dispone para terminar el proyecto</option>
+            </select>
+          </div>
+         
+          <div class="col">
+            <img src="img/Diapositiva3.JPG" class="img-fluid" alt="...">
+            <label class="visually-hidden" for="preguntatres">Pregunta 3</label>
+            <select class="form-select" id="preguntatres" >
+              <option selected></option>
+              <option value="1">Producto organizacionales y entorno</option>             
+              <option value="2">Rendimiento organizacionales y externos</option>
+              <option value="3">Producto empresariales y externos</option>
+              <option value="4">Producto organizacionales y externos</option>
+            </select>
+          </div>
+          <div class="col">
+            <img src="img/Diapositiva4.JPG" class="img-fluid" alt="...">
+            <label class="visually-hidden" for="preguntacuatro">Pregunta 4</label>
+            <select class="form-select" id="preguntacuatro" >
+              <option selected></option>
+              <option value="1">Plataforma producción personal proyecto</option>
+              <option value="2">Plataforma producto personal proyecto</option>
+              <option value="3">Plataforma producto pvol proyecto</option>
+              <option value="4">Puntos de función producto personal proyecto</option>
+            </select>
+          </div>
+        </div>
+          <br>
+        <div class="row">
+          <div class="col">
+            <label class="visually-hidden" for="nombre">Ingrese Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+           <div class="valid-feedback"> Correcto </div>
+            </div>
+          <div class="col">
+            <label class="visually-hidden" for="nombre">Ingrese Correo Electrónico</label>
+            <input type="email" class="form-control" id="correo" placeholder="@ Correo electrónico" required >
+          </div>
+          <div class="col"> 
+          <input type="button" onclick="validarCampos()" value="Enviar">
+        </div> 
+        </div>
+    </div>
+    </form>
+    <br>
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://mdbootstrap.com/"> Elizabet Alejandra Matoso</a>
+    </div>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+</body>
+
+</html>
